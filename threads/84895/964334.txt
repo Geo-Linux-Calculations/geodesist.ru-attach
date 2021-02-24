@@ -1,0 +1,18 @@
+    cr2 сказал(а): ↑
+
+        По логике манов можно и stdev="0-0-10.0" задать, но я не попробовал.
+
+    Для FreeAdjust (https://geodesist.ru/threads/programmy-dlja-uravnivanija-linejno-uglovyx-setej.72942/#post-833297), который пользует более ранюю версию GNU Gama, не умеющую градусы, перевёл всё в гоны.
+     
+
+Вложения:
+
+    964334-coordpr-gama-ccg-fa.zip
+
+    Размер файла:
+        2,2 КБ
+
+
+Keep it simple, stupid.
+#42
+zvezdochiot, 2 авг 2020

@@ -1,0 +1,10 @@
+Совсем необязательно. Ниже приведённые намётки алгоритма легко переводят координаты из проекции Ламберта (WGS 84) в Гаусса-Крюгера СK-1942 с миллиметровой точностью. Так и калибровку можно делать.
+965069-Formola001.png
+965069-Formola002.png
+965069-Formola003.png
+
+
+si jeunesse savait, si vieillesse pouvait.
+best regards, Alexander Starostin aka stout
+#138
+stout, 6 авг 2020
