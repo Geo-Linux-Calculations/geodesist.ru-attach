@@ -1,0 +1,45 @@
+    Сергей Панарин,
+    У Klaus Hehl и Peter Schuhr явное помутнение рассудка, раз они решили комплексную широту находить как
+    b0 = arcsin(tanh (w))
+    bk = arcsin(tanh (w + e × ATANH(e ×sin(bk-1)))
+    Конечно, правильнее решать как
+    s0 = tanh (w)
+    sk = tanh (w + e × ATANH(e ×sk-1))
+
+    У меня есть свой собственный метод, три члена ряда дают ошибку
+
+    995421-NE_degree-3_base-2_light.png
+    995421-NE_abs_degree-3_base-10.png
+
+Вложения:
+
+    995421-CPP_and_Java_code_for_recursion_formulas.pdf
+
+    Размер файла:
+        647,5 КБ
+
+    995421-GK_Abbildung_komplex.pdf
+
+    Размер файла:
+        1810,5 КБ
+
+    995421-N_Stuifbergen-2009-Wide_zone_transverse_Mercator_projection-Technical_Report_262.pdf
+
+    Размер файла:
+        519,3 КБ
+
+    995421-Peter_Schuhr-zur_Gauß-Kruger_Abbildung_breiter_Meridianstreifen.pdf
+
+    Размер файла:
+        166,7 КБ
+
+    995421-KLAUS_HEHL-Computation_of_Meridian_Arcs-Gauss-Krueger.pdf
+
+    Размер файла:
+        265,9 КБ
+
+
+si jeunesse savait, si vieillesse pouvait.
+best regards, Alexander Starostin aka stout
+#16
+stout, Воскресенье в 14:40
