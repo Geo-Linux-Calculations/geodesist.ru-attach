@@ -1,8 +1,11 @@
     Сергей Панарин,
     У Klaus Hehl и Peter Schuhr явное помутнение рассудка, раз они решили комплексную широту находить как
+
     b0 = arcsin(tanh (w))
     bk = arcsin(tanh (w + e × ATANH(e ×sin(bk-1)))
+
     Конечно, правильнее решать как
+
     s0 = tanh (w)
     sk = tanh (w + e × ATANH(e ×sk-1))
 

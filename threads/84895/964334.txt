@@ -2,8 +2,9 @@
 
         По логике манов можно и stdev="0-0-10.0" задать, но я не попробовал.
 
-    Для FreeAdjust (https://geodesist.ru/threads/programmy-dlja-uravnivanija-linejno-uglovyx-setej.72942/#post-833297), который пользует более ранюю версию GNU Gama, не умеющую градусы, перевёл всё в гоны.
-     
+    Для FreeAdjust (https://geodesist.ru/threads/programmy-dlja-uravnivanija-linejno-uglovyx-setej.72942/#post-833297),
+    который пользует более ранюю версию GNU Gama, не умеющую градусы, перевёл всё в гоны.
+
 
 Вложения:
 

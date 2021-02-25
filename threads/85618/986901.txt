@@ -2,7 +2,9 @@
 
         А если как исходные взять все Z, точнее будет?
 
-    Ну Вас к чорту с вашим Credo! Уравнял всё в GNU Gama (https://geodesist.ru/threads/gnu-gama.86414/):
+    Ну Вас к чорту с вашим Credo!
+    Уравнял всё в GNU Gama (https://geodesist.ru/threads/gnu-gama.86414/):
+
     Код:
 
     M1 525.32717 415.98035 22.11055
@@ -16,12 +18,12 @@
         Уравнял всё в GNU Gama (https://geodesist.ru/threads/gnu-gama.86414/):
 
     С третьей координатой я конечно палку перегнул:
+
     Код:
 
     M1 525.38732 415.93725
 
     986901-GROnoZ.svg.png
-     
 
 Вложения:
 

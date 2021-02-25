@@ -2,8 +2,15 @@
 
         Спасибо буду изучать нашел такой документ https://www.linz.govt.nz/regulatory/25002
 
-    Это довольно старые формулы Redfearn series использовались в Defense Mapping Agency Technical Report TM 8358.1: Datums, Ellipsoids, Grids and Grid Reference Systems. В настоящее время действует NGA.SIG.0012_2.0.0_UTMUPS 2014-03-25 NATIONAL GEOSPATIAL-INTELLIGENCE AGENCY STANDARDIZATION DOCUMENT Implementation Practice The Universal Grids and the Transverse Mercator and Polar Stereographic Map Projections 2014-03-25 Version 2.0.0
-    По большому счёту это те еже формулы, что и у шведов. А начало они берут из работы Крюгера 1912 года.
+    Это довольно старые формулы Redfearn series использовались
+    в Defense Mapping Agency Technical Report TM 8358.1: Datums,
+    Ellipsoids, Grids and Grid Reference Systems.
+    В настоящее время действует NGA.SIG.0012_2.0.0_UTMUPS 2014-03-25 NATIONAL
+    GEOSPATIAL-INTELLIGENCE AGENCY STANDARDIZATION DOCUMENT Implementation
+    Practice The Universal Grids and the Transverse Mercator and Polar
+    Stereographic Map Projections 2014-03-25 Version 2.0.0
+    По большому счёту это те еже формулы, что и у шведов.
+    А начало они берут из работы Крюгера 1912 года.
     Первыми суммирование по Кленшоу стали делать датчане ещё в 60-х годах.
     https://yadi.sk/i/plHucUY2yv7H8Q
 

@@ -2,10 +2,11 @@
 
         Пользователь ZUCKtm разместил новый ресурс:
 
-    Добавил ту же самую книгу в формате Gnumeric: https://github.com/Geo-Linux-Calcul...b/master/spreadsheets/ellipsoidtrans.gnumeric
+    Добавил ту же самую книгу в формате Gnumeric:
+
+        https://github.com/Geo-Linux-Calculations/gnumeric-ols/blob/master/spreadsheets/ellipsoidtrans.gnumeric
 
     Есть также эта книга в формате Libre/OpenOffice (см. вложения):
-     
 
 Вложения:
 
