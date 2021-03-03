@@ -1,0 +1,16 @@
+    Схема рассчёта:
+
+    ![Shema](https://raw.githubusercontent.com/Geo-Linux-Calculations/cran.r-geoter/master/doc/geoter-shema.png)
+
+    Схема триангуляции Делоне на тестовом наборе данных:
+
+    ![2D](https://raw.githubusercontent.com/Geo-Linux-Calculations/cran.r-geoter/master/doc/test2d.png)
+
+    Имитация 3D рельефа на тестовом наборе данных:
+
+    ![3D](https://raw.githubusercontent.com/Geo-Linux-Calculations/cran.r-geoter/master/doc/test3d.png)
+
+
+Keep it simple, stupid.
+#2
+zvezdochiot, 18 янв 2021 

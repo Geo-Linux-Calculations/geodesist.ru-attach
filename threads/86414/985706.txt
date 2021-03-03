@@ -1,0 +1,11 @@
+    ABOUT.
+
+    https://github.com/cepek - страница автора на GIT.
+
+    https://geodesist.ru/threads/programmy-dlja-uravnivanija-linejno-uglovyx-setej.72942/#post-833297 -
+    "старый" ГУЙ для GNU Gama: FreeAdjust (не умеет градусы).
+
+
+Keep it simple, stupid.
+#10
+zvezdochiot, 5 янв 2021 

@@ -1,0 +1,34 @@
+    ![GNU Gama](https://www.gnu.org/software/gama/g-logo.png) https://www.gnu.org/software/gama/
+
+    Пакет GNU Gama предназначен для настройки геодезических сетей.
+    Он предназначен для использования с традиционными геодезическими съемками,
+    которые до сих пор используются и необходимы для специальных измерений
+    (например, подземных или высокоточных инженерных измерений),
+    где нельзя использовать глобальную систему позиционирования (GPS).
+
+    ![SVG out](https://www.gnu.org/software/gama/gama-local.svg)
+
+    Регулировка в локальной декартовой системе координат полностью поддерживается
+    программой командной строки gama-local, которая настраивает геодезические (свободные) сети
+    наблюдаемых расстояний, направлений, углов, разностей высот, трехмерных векторов
+    и наблюдаемых координат (координат с заданной ковариационно-дисперсионной матрицей.
+   Уравнивание в глобальных системах координат поддерживается программой gama-g3 лишь частично.
+
+    https://sourceforge.net/projects/gnu-gama-q2/ - ГИЙ для GNU Gama
+
+    https://sourceforge.net/projects/gnu-gama-q2/files/gnu-gama-qt-1.02_2.09.zip - проверена мной на Win10.
+    По-моему complite. Если будет нехватать dll-ок, обращайтесь, подкину.
+
+    https://sourceforge.net/projects/gnu-gama-q2/files/examples.db - база примеров "на все случаи жизни".
+    Более чем достаточно для ознакомления.
+
+    https://geodesist.ru/threads/koordi...bez-primychnyx-uglov.84895/page-2#post-964253 - ковыряние с GNU Gama на данном форуме.
+
+    https://geodesist.ru/threads/tipy-linejno-uglovyx-izmerenij.14941/page-19#post-985589 - задача Ганзена с GNU Gama на данном форуме.
+
+    https://sourceforge.net/projects/gnu-gama-local/ - Последняя версия консольной GNU Gama для Windows.
+
+
+Keep it simple, stupid.
+#1
+zvezdochiot, 5 янв 2021 

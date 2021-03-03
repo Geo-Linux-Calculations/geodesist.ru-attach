@@ -1,0 +1,8 @@
+    Выпущен специальный релиз GeoEasy, как ГУИ-конвертер файлов приборов в формат GNU Gama:
+
+    https://geodesist.ru/threads/geoeasy-3-0-3.70513/#post-994677
+
+
+Keep it simple, stupid.
+#76
+zvezdochiot, 17 фев 2021 

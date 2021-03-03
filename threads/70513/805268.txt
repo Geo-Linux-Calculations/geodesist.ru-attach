@@ -1,0 +1,20 @@
+    Набор tcl-скриптов в виде многофункционального приложения GeoEasy 3.0.3 - комплекс инструментов для геодезистов:
+
+    ![Main](https://github.com/zsiki/GeoEasy/raw/master/doc/images/main_window.png)
+
+    ![Graphic](https://github.com/zsiki/GeoEasy/raw/master/doc/images/graphic1.png)
+
+    https://github.com/zsiki/GeoEasy
+
+    В текущей версии исходный код отделён от документации и добавлена возможность генерации deb пакетов:
+
+    https://github.com/zsiki/GeoEasy/releases
+
+    GeoEasy, помимо собственных инструментов обработки геодезических измерений,
+    взаимодействует с пакетами GNU Gama, Triangle и Proj.4.
+
+
+Keep it simple, stupid.
+#1
+zvezdochiot, 12 май 2018
+
