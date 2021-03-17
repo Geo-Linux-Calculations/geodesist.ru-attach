@@ -1,0 +1,20 @@
+    GeoLexa сказал(а): ↑
+
+        Я имею ось трассы в координатах и план трассы.
+
+    1 MarkEdit:
+    * http://mykaralw.narod.ru/download/exe/index.html
+    * http://mykaralw.narod.ru/download/exe/i/markedit.html
+    * https://github.com/Geo-Linux-Calculations/MarkEdit-BCX
+
+    2 Qtrassa:
+    * https://geodesist.ru/threads/qtrassa-0-5.53673/
+
+    3 Trassa:
+    * http://dortver.ru/download/view.download/360.html
+    * https://www.geodigital.ru/soft_geo
+
+
+Keep it simple, stupid.
+#2
+zvezdochiot, 17 окт 2020
