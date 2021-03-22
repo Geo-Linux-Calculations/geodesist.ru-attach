@@ -3,9 +3,9 @@
 из проекции Ламберта (WGS 84) в Гаусса-Крюгера СK-1942
 с миллиметровой точностью. Так и калибровку можно делать.
 
-965069-Formola001.png
-965069-Formola002.png
-965069-Formola003.png
+965069-Formola001.png [135 КБ]
+965069-Formola002.png [75 КБ]
+965069-Formola003.png [59 КБ]
 
 
 si jeunesse savait, si vieillesse pouvait.
