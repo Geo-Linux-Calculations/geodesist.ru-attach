@@ -1,0 +1,40 @@
+	
+
+    GeoConformImage.
+
+    https://github.com/Geo-Linux-Calculations/geoconformimage
+
+    Утилита командной строки на базе FreeImage для применения к изображению
+    ![source](https://raw.githubusercontent.com/Geo-Linux-Calculations/geoconformimage/main/doc/world-rus.small.jpg)
+    конформного преобразования (-p 10,10,0.97,0.25,0.0001,0.0001) [до 9ой степени]
+    ![​target](https://raw.githubusercontent.com/Geo-Linux-Calculations/geoconformimage/main/doc/world-rus.small.out.jpg)
+
+    Поддерживает все форматы, которые поддерживает FreeImage. Распространяется под лицензией PDM 1.0.
+
+    Предупреждение! Программа пользует децентрализованные параметры.
+	Параметры от https://geodesist.ru/resources/cplanelite-programma-pereschjota-koordinat-po-obschim-tochkam.147/ не подойдут.
+	Пользуйте параметры, полученные с помощью https://geodesist.ru/threads/geofindkey-1-2.70639/ , либо https://github.com/Geo-Linux-Calculations/gnumeric-ols .
+     
+
+Keep it simple, stupid.
+#1
+zvezdochiot, 25 мар 2021 в 18:59
+	
+
+    zvezdochiot сказал(а): ↑
+
+        Предупреждение! Программа пользует децентрализованные параметры.
+		Параметры от https://geodesist.ru/resources/cplanelite-programma-pereschjota-koordinat-po-obschim-tochkam.147/ не подойдут.
+		Пользуйте параметры, полученные с помощью https://geodesist.ru/threads/geofindkey-1-2.70639/ , либо https://github.com/Geo-Linux-Calculations/gnumeric-ols .
+
+    Здесь я конечно слегка погорячился. Можно пользовать и центрированные параметры, но совместно с центрированными координатами региона изображения:
+
+    Код:
+
+    r = {Xws,Yws,Xne,Yne}
+    rc = r - {Xc,Yc} = {Xws-Xc,Yws-Yc,Xne-Xc,Yne-Yc}
+
+
+Keep it simple, stupid.
+#2
+zvezdochiot, 26 мар 2021 в 08:30 
