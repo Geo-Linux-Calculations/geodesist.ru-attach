@@ -1,3 +1,5 @@
+; Interpolate evelation for line
+
 (defun c:pointiso (/ p1 p2 dh)
   (setq p1 (getpoint "\n Point 1:"))
   (setq p2 (getpoint "\n Point 2:"))

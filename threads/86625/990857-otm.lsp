@@ -1,3 +1,5 @@
+; Text of Z for points
+
 (defun c:otm ( / H SSET lay osm npoint n ent pxy pz)
  (if(and
    (setq sset (ssget '((0 . "POINT"))))
