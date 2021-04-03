@@ -1,0 +1,21 @@
+    Александр Яковченко сказал(а): ↑
+
+        Возьмёте эфемериды в WGS84 - получите координаты приёмника в WGS84, возьмёте IGS - получите в IGS.
+
+    Fortran 77 source code for transforming GPS orbit files in SP3 format between different realizations of ITRF's
+
+    zvezdochiot сказал(а): ↑
+
+        Или я что то упускаю?
+
+    Нет, не упускаете.
+
+Вложения:
+
+    1003462-trnfsp3n_dos.zip [363,0 КБ]
+
+
+si jeunesse savait, si vieillesse pouvait.
+best regards, Alexander Starostin aka stout
+#83
+stout, 3 апр 2021 в 15:10

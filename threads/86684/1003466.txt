@@ -1,0 +1,18 @@
+Вычисление датума
+
+    StudentX сказал(а): ↑
+
+        Смещение и ориентация эллипсоидов в геоцентрических системах координат.
+
+    Пять лет назад писал:
+    «Уже устал приводить ответ из FAQ ITRF»
+    What is the ellipsoid associated with the realizations of ITRS ?
+    The ITRF solutions do not directly use an ellipsoid. ITRF solutions are specified by cartesian equatorial coordinates X, Y, and Z.
+    If needed they can be transformed to geographical coordinates (Longitude, Latitude and Height) referred to an ellipsoid.
+    In this case the GRS80 ellipsoid is recommended (semi-major axis a=6378137.0 m, eccentricity**2 =0.00669438002290).​
+
+
+si jeunesse savait, si vieillesse pouvait.
+best regards, Alexander Starostin aka stout
+#175
+stout, 3 апр 2021 в 15:28
