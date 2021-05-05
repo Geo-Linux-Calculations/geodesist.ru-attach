@@ -1,0 +1,351 @@
+Программирование перевода координат из одной системы в другую.
+
+    VP сказал(а): ↑
+
+        Что неправильно?
+
+    Знаки 7-параметров.
+    Код:
+```
+    #include <cstdlib>
+    #include <fstream>
+    #include <iostream>
+    #include <stdint.h>
+    #include <stdio.h>
+    #include <cmath>
+     
+    using namespace std;
+     
+    typedef double REAL;
+     
+    const REAL DegPerRad = 45/atan(REAL(1));
+    const REAL ArcSecPerRad = 3600*DegPerRad;
+     
+    //
+    // ===========================================================================
+    //
+    inline REAL Int(const REAL& Value)
+    {
+        return (Value > 0) ? floor(Value) : ceil(Value);
+    }
+    //
+    // ===========================================================================
+    //
+    inline REAL Sqr(const REAL& Value)
+    {
+        return Value*Value;
+    }
+    //
+    // ===========================================================================
+    //
+    inline REAL DmsToDeg(const REAL& DMS)
+    {
+        REAL D = Int(DMS/10000);
+        return ((DMS/200 - 32*D - Int((DMS - D*10000)/100)/5)/18);
+    }
+    //
+    // ===========================================================================
+    //
+    inline REAL DmsToRad(const REAL& DMS)
+    {
+        return DmsToDeg(DMS)/DegPerRad;
+    }
+    //
+    // ===========================================================================
+    //
+    inline REAL DegToDms(const REAL& Deg)
+    {
+        REAL D = Int(Deg);
+        return (9*Deg + 16*D + Int(60*(Deg - D))/10)*400;
+    }
+    //
+    // ===========================================================================
+    //
+    inline REAL RadToDms(const REAL& Rad)
+    {
+        return DegToDms(Rad*DegPerRad);
+    }
+    //
+    // ===========================================================================
+    //
+    void BLH2XYZ(const REAL& a // SemimajorAxis
+                ,const REAL& f // Flattening
+                ,const REAL& B
+                ,const REAL& L
+                ,const REAL& H
+                ,REAL& X
+                ,REAL& Y
+                ,REAL& Z)
+    {
+     
+        REAL ee = f*(2 - f);
+        REAL sinB = sin(B);
+        REAL cosB = cos(B);
+        REAL N = a/sqrt(1 - ee*Sqr(sinB));
+        X = (N + H)*cosB*cos(L);
+        Y = (N + H)*cosB*sin(L);
+        Z = (N*(1 - ee) + H)*sinB;
+     
+    } // end void BLH2XYZ
+    //
+    // ===========================================================================
+    //
+    REAL Bowring(const REAL& a // SemimajorAxis
+                ,const REAL& f // Flattening
+                ,const REAL& X // Cartesian coordinates (X , Y, Z)
+                ,const REAL& Y
+                ,const REAL& Z)
+    {
+        REAL ee = f*(2 - f);
+        REAL eea = ee*a;
+        REAL RRxy = X*X + Y*Y;
+        REAL Rxy = sqrt(RRxy);
+        REAL s = sqrt(Z*Z/(1 - ee) + RRxy);
+        REAL TanB = Z/Rxy*s/(s - eea);
+        REAL TanBeta = (1 - f)*TanB;
+        // при таком начальном значении обеспечивается точность, как минимум, 16 знаков мантиссы
+        // для tan(B) в диапазоне высот -1 000 км. < H < 20 000 км.
+     
+        REAL SqrCosBeta = 1/(1 + Sqr(TanBeta));
+        REAL cosBeta = sqrt(SqrCosBeta);
+        REAL sinBeta = TanBeta*cosBeta;
+        REAL SqrSinBeta = 1 - SqrCosBeta;
+        TanB = (Z + eea/(1 - f)*SqrSinBeta*sinBeta)/(Rxy - eea*SqrCosBeta*cosBeta);
+     
+        return TanB;
+    }
+    //
+    // ===========================================================================
+    //
+    void Helmert(const REAL XYZA[], const REAL Shift[], const REAL angle[], const REAL& scale, REAL XYZB[])
+    {
+     
+        XYZB[0] = Shift[0] + (1 + scale)*(XYZA[0] + angle[2]*XYZA[1] - angle[1]*XYZA[2]);
+        XYZB[1] = Shift[1] + (1 + scale)*(XYZA[1] - angle[2]*XYZA[0] + angle[0]*XYZA[2]);
+        XYZB[2] = Shift[2] + (1 + scale)*(XYZA[2] + angle[1]*XYZA[0] - angle[0]*XYZA[1]);
+    }
+    //
+    // ===========================================================================
+    //
+    void XYZ2BLH(const REAL& a // SemimajorAxis
+                ,const REAL& f // Flattening
+                ,const REAL& X // Cartesian coordinates (X , Y, Z)
+                ,const REAL& Y
+                ,const REAL& Z
+                ,REAL& B
+                ,REAL& L
+                ,REAL& H)
+    {
+     
+        REAL TanB = Bowring(a, f, X, Y, Z);
+        B = atan(TanB);
+        REAL SqrCosB = 1/(1 + Sqr(TanB));
+        REAL cosB = sqrt(SqrCosB);
+        REAL sinB = TanB*cosB;
+        REAL Rxy = sqrt(Sqr(X) + Sqr(Y));
+        L = 2*atan(Y/(X + Rxy));                                       // формула Ваничека
+        H = Rxy*cosB + Z*sinB - a*sqrt(1 - f*(2 - f)*Sqr(sinB)); // не самый лучший подход
+    }
+     
+    //
+    // ===========================================================================
+    //
+    void Molodensky(const REAL& SemiMajorAxisA
+                    ,const REAL& SemiMajorAxisB
+                    ,const REAL& RecipFlatteningA
+                    ,const REAL& RecipFlatteningB
+                    ,const REAL Shift[]
+                    ,const REAL angle[] // radian
+                    ,const REAL& scale
+                    ,const REAL& BA // radian
+                    ,const REAL& LA // radian
+                    ,const REAL& HA
+                    ,REAL& BB // radian
+                    ,REAL& LB // radian
+                    ,REAL& HB)
+    {
+        REAL deltaB = 0;
+        REAL deltaL = 0;
+        REAL deltaH = 0;
+        REAL dX = Shift[0];
+        REAL dY = Shift[1];
+        REAL dZ = Shift[2];
+        REAL Wx = angle[0];
+        REAL Wy = angle[1];
+        REAL Wz = angle[2];
+     
+        cout << "============= proc Molodensky ===============" << '\n';
+     
+        REAL fA = 1/RecipFlatteningA; // flattening System A
+        REAL fB = 1/RecipFlatteningB; // flattening System B
+        REAL sqr_excentricityA = fA*(2 - fA);
+        REAL sqr_excentricityB = fB*(2 - fB);
+        REAL dA = SemiMajorAxisB - SemiMajorAxisA;
+        REAL a = 0.5*(SemiMajorAxisB + SemiMajorAxisA);
+        REAL sqr_e = 0.5*(sqr_excentricityA + sqr_excentricityB);
+        REAL temp = 1/(RecipFlatteningA*RecipFlatteningB);
+        REAL d_sqr_e = (RecipFlatteningA - RecipFlatteningB)*temp*(2 - temp*(RecipFlatteningA + RecipFlatteningB));
+        //    d_sqr_e = sqr_excentricityB - sqr_excentricityA;
+        int iter_count = 3;
+        for(int k = iter_count; k > 0; k--) {
+            REAL B = BA + 0.5*deltaB;
+            REAL L = LA + 0.5*deltaL;
+            REAL H = HA + 0.5*deltaH;
+            REAL sinB = sin(B);
+            REAL cosB = cos(B);
+            REAL cos2B = (cosB - sinB)*(cosB + sinB);
+            REAL sinL = sin(L);
+            REAL cosL = cos(L);
+            REAL W = 1/sqrt(1 - sqr_e*Sqr(sinB));
+            REAL N = a*W;
+            REAL M = a*(1 - sqr_e)*W*W*W;
+            deltaB = (N/a*sqr_e*sinB*cosB*dA + 0.5*(Sqr(N/a) + 1)*N*sinB*cosB*d_sqr_e -
+                     (dX*cosL + dY*sinL)*sinB + dZ*cosB)/(M + H) +
+                     (Wy*cosL - Wx*sinL)*(1 + sqr_e*cos2B) - scale*sqr_e*sinB*cosB;
+            deltaL = (dY*cosL - dX*sinL)/(cosB*(N + H)) + sinB/cosB*(1 - sqr_e)*(Wx*cosL + Wy*sinL) - Wz;
+            deltaH = 0.5*N*Sqr(sinB)*d_sqr_e - a/N*dA + (dX*cosL + dY*sinL)*cosB + dZ*sinB -
+                N*sqr_e*sinB*cosB*(Wx*sinL - Wy*cosL) + scale*(Sqr(a)/N + H);
+     
+            cout << " ======= iteration: " << iter_count + 1 - k << '\n';
+            cout << "   deltaB = " << deltaB << '\n';
+            cout << "   deltaL = " << deltaL << '\n';
+            cout << "   deltaH = " << deltaH << '\n';
+        }
+        BB = BA + deltaB;
+        LB = LA + deltaL;
+        HB = HA + deltaH;
+    }
+     
+    int main(int argc, char** argv)
+    {
+     
+        REAL SemiMajorAxisA = 6378137;
+        REAL SemiMajorAxisB = 6378245;
+        REAL RecipFlatteningA = 298.257223563;
+        REAL RecipFlatteningB = 298.3;
+        REAL fA, fB;
+        REAL Shift[3] = { -23.57, +140.95, +79.8 };
+        REAL angle[3] = { 0, +0.35, +0.79 };
+        REAL scale = +0.00000022;
+        REAL BA = 560000.0000;
+        REAL LA = 370000.0000;
+        REAL HA;
+        REAL BB;
+        REAL LB;
+        REAL HB;
+        REAL X, Y, Z;
+        REAL XYZA[3];
+        REAL XYZB[3];
+        char ans;
+     
+        cout.precision(12);
+        cout << fixed << endl;
+     
+        cout << "\n manual input parametr (Y/N)?";
+        cin >> ans;
+     
+        if(toupper(ans) == 'Y') {
+            cout << "Please enter for System A" << endl << "  Semimajor axis in meter = ";
+            cin >> SemiMajorAxisA;
+            cout << endl << "reciprocal flattening (1/f) = ";
+            cin >> RecipFlatteningA;
+     
+            cout << "Please enter for System B" << endl << "  Semimajor axis in meter = ";
+            cin >> SemiMajorAxisB;
+            cout << endl << "reciprocal flattening (1/f) = ";
+            cin >> RecipFlatteningB;
+     
+            cout << endl << "Please enter Helmert param:";
+            cout << endl << "Shift X in meter = ";
+            cin >> Shift[0];
+            cout << endl << "Shift Y in meter = ";
+            cin >> Shift[1];
+            cout << endl << "Shift Z in meter = ";
+            cin >> Shift[2];
+            cout << endl << "angle of rotation Wx in arc. sec. = ";
+            cin >> angle[0];
+            cout << endl << "angle of rotation Wy in arc. sec. = ";
+            cin >> angle[1];
+            cout << endl << "angle of rotation Wz in arc. sec. = ";
+            cin >> angle[2];
+            cout << endl << "(1 - scale) = ";
+            cin >> scale;
+     
+            cout << endl << "Please enter Geodetic:";
+            cout << endl << "Latitude  in format ddmmss.ss... = ";
+            cin >> BA;
+            cout << endl << "Longitude in format ddmmss.ss... = ";
+            cin >> LA;
+            cout << endl << "H in meter = ";
+            cin >> HA;
+        }
+     
+        for(int k = 0; k < 3; k++)
+            angle[k] /= ArcSecPerRad;
+        BA = DmsToRad(BA);
+        LA = DmsToRad(LA);
+        fA = 1/RecipFlatteningA;
+        fB = 1/RecipFlatteningB;
+     
+        cout << '\n' << "System A:" << '\n';
+        cout << "  B(dms) = " << RadToDms(BA) << '\n';
+        cout << "  L(dms) = " << RadToDms(LA) << '\n';
+        cout << "  B(degree) = " << DegPerRad*BA << '\n';
+        cout << "  L(degree) = " << DegPerRad*LA << '\n';
+        cout << "  H      = " << HB << '\n';
+     
+     
+        Molodensky(SemiMajorAxisA, SemiMajorAxisB, RecipFlatteningA, RecipFlatteningB, Shift, angle, scale, BA, LA, HA, BB,
+            LB, HB);
+     
+        cout << '\n' << "System B:" << '\n';
+        cout << "  B(dms) = " << RadToDms(BB) << '\n';
+        cout << "  L(dms) = " << RadToDms(LB) << '\n';
+        cout << "  B(degree) = " << DegPerRad*BB << '\n';
+        cout << "  L(degree) = " << DegPerRad*LB << '\n';
+        cout << "  H      = " << HB << '\n';
+     
+        BLH2XYZ(SemiMajorAxisA, fA, BA, LA, HA, X, Y, Z);
+     
+        XYZA[0] = X;
+        XYZA[1] = Y;
+        XYZA[2] = Z;
+        cout << '\n' << "System A:" << '\n';
+        cout << " X = " << X << '\n';
+        cout << " Y = " << Y << '\n';
+        cout << " Z = " << Z << '\n';
+     
+        Helmert(XYZA, Shift, angle, scale, XYZB);
+     
+        X = XYZB[0];
+        Y = XYZB[1];
+        Z = XYZB[2];
+        cout << '\n' << "System B:" << '\n';
+        cout << " X = " << X << '\n';
+        cout << " Y = " << Y << '\n';
+        cout << " Z = " << Z << '\n';
+     
+     
+        XYZ2BLH(SemiMajorAxisB, fB, X, Y, Z, BB, LB, HB);
+     
+        cout << '\n' << "Helmert transform" << '\n';
+        cout << "  B(dms) = " << RadToDms(BB) << '\n';
+        cout << "  L(dms) = " << RadToDms(LB) << '\n';
+        cout << "  B(degree) = " << DegPerRad*BB << '\n';
+        cout << "  L(degree) = " << DegPerRad*LB << '\n';
+        cout << "  H      = " << HB << '\n';
+     
+        system("PAUSE");
+        return EXIT_SUCCESS;
+    }
+```
+
+Вложения:
+
+    984966-SVP.ZIP [588,5 КБ]
+
+
+si jeunesse savait, si vieillesse pouvait.
+best regards, Alexander Starostin aka stout
+#74
+stout, 28 дек 2020
