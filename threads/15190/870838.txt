@@ -1,0 +1,15 @@
+    MaxKal сказал(а): ↑
+
+        есть простой алгоритм http://www.janssenprecisionengineering.com/downloads/Fit-plane-through-data-points.pdf
+
+    К сожалению это неправильный алгоритм.
+    То есть он делает не совсем то, что очевидно ожидает большинство пользователей.
+    Проще понять это на 2D модели
+    870838-Least-squares_and_total_least-squares_fits.png [24,3 Кб]
+    Алгоритм в статье делает как на левом рисунке, а ожидается результат, как на правом.
+
+
+si jeunesse savait, si vieillesse pouvait.
+best regards, Alexander Starostin aka stout
+#61
+stout, 13 мар 2019

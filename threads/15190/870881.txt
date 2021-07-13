@@ -1,0 +1,15 @@
+    MaxKal сказал(а): ↑
+
+        svd на лисп? Это не верх извращения? Я надеюсь это шутка.
+
+    Первое, что нашлось (https://github.com/blindglobe/lisp-matrix).
+
+
+Вложения:
+    870881-lisp-matrix-master.zip [149,1 КБ]
+
+
+si jeunesse savait, si vieillesse pouvait.
+best regards, Alexander Starostin aka stout
+#66
+stout, 13 мар 2019
