@@ -1,0 +1,20 @@
+    zvezdochiot сказал(а): ↑
+
+        GeographicLib
+        * https://geographiclib.sourceforge.io/
+        * https://geographiclib.sourceforge.io/html/
+
+    C2H5OH
+
+    zvezdochiot сказал(а): ↑
+
+        Сильно смахивает на разложение Фурье.
+
+    Ноги растут из аппроксимации Паде квадратного корня. Ряд по арктангкнсам (sic!) малых величин.
+	В знаменателе величина больше ~2/298.25. Три члена ряда дают относительную точность порядка 5×10-20.
+     
+
+si jeunesse savait, si vieillesse pouvait.
+best regards, Alexander Starostin aka stout
+#2252
+stout, 4 окт 2021, 20:49 

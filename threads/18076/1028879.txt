@@ -1,0 +1,18 @@
+    stout сказал(а): ↑
+
+        GeographicLib
+
+    GeographicLib
+    * https://geographiclib.sourceforge.io/
+    * https://geographiclib.sourceforge.io/html/
+
+    stout сказал(а): ↑
+
+        Для дины дуги меридиана у меня есть формулы и поточнее
+
+    Сильно смахивает на разложение Фурье.
+     
+
+Keep it simple, stupid.
+#2251
+zvezdochiot, 4 окт 2021, 19:31 
