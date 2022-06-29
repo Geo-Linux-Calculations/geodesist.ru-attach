@@ -1,0 +1,24 @@
+Таблицы MS Excel для пересчёта координат по общим точкам:
+
+    Преобразование Хельмерта:
+    * helmert3d.xls
+
+    Конформное преобразование:
+    1ой степени: conformaltrans1p.xls
+    2ой степени: conformaltrans2p.xls (графическая визуализация)
+    3ей степени: conformaltrans3p.xls
+    4ой степени: conformaltrans4p.xls
+    5ой степени: conformaltrans5p.xls
+
+    Преобразование Гаусса-Крюгера (B,L)<->(x,y):
+    * gauss-kruger.xls
+
+    Бонус: Перевод углов DDMMSS<->DD.DDDD
+    * DDMMSS-DD.xls
+
+    Обсуждение на данном форуме:
+    * [Местная система координат 104 г. Подольск Московской области.](https://geodesist.ru/threads/mestnaja-sistema-koordinat-104-g-podolsk-moskovskoj-oblasti.90898/)
+
+Keep it simple, stupid.
+#1
+zvezdochiot, 22 июн 2022 

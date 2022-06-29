@@ -1,0 +1,16 @@
+Таблицы MS Excel для пересчёта координат по общим точкам:
+
+    zvezdochiot сказал(а): ↑
+
+        Для удобного и свободного скачивания добавил GIT
+
+    Выпуск [0.20220628](https://github.com/Geo-Linux-Calculations/geodesy-msexcel-ols/releases/tag/0.20220628):
+
+        conformaltrans: добавлена возможность применения ["метода повторного весового пресса"](https://geodesist.ru/threads/sezonnaja-proverka-gro.14678/page-7#post-1005956) (Wpress) (conformaltrans/*.xls).
+        добавлена генерация скриптов для CAD для визуализации каталогов координат (cad/catalog_to_cad_script.xls).
+
+     
+
+Keep it simple, stupid.
+#14
+zvezdochiot, 28 июн 2022 в 16:32

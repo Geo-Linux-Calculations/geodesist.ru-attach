@@ -1,0 +1,18 @@
+Таблицы MS Excel для пересчёта координат по общим точкам:
+
+    kenga10 сказал(а): ↑
+
+        у меня скоро появятся точки
+
+    "Мануал" по конформному преобразованию: [Местные системы координат городов #138.}https://geodesist.ru/threads/mestnye-sistemy-koordinat-gorodov.12174/page-7#post-965069
+    kenga10 сказал(а): ↑
+
+        Была бы еще инструкция
+
+    "Мануал" по МНК (OLS): [Итерационный алгоритм конформного преобразования? #4.](https://geodesist.ru/threads/iteracionnyj-algoritm-konformnogo-preobrazovanija.85528/#post-972309)
+    "Мануал" по уменьшению "плохости" матрицы нормальных уравнений (МНК): [Гауссова нормализация переменных в МНК.](https://geodesist.ru/threads/gaussova-normalizacija-peremennyx-v-mnk.85936/)
+     
+
+Keep it simple, stupid.
+#10
+zvezdochiot, 24 июн 2022 в 15:37

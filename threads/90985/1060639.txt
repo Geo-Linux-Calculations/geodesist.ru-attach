@@ -1,0 +1,17 @@
+Таблицы MS Excel для пересчёта координат по общим точкам:
+
+    zvezdochiot сказал(а): ↑
+
+        Таблицы MS Excel для пересчёта координат по общим точкам:
+
+        Обсуждение на данном форуме:
+
+    Применение данных таблиц на данном форуме:
+    * [Параметры (датум) для Системы координат 1932 года (СК-32) #218](https://geodesist.ru/threads/parametry-datum-dlja-sistemy-koordinat-1932-goda-sk-32.83493/page-11#post-1060415) (исходник)
+    * [Параметры (датум) для Системы координат 1932 года (СК-32) #225](https://geodesist.ru/threads/parametry-datum-dlja-sistemy-koordinat-1932-goda-sk-32.83493/page-12#post-1060550)
+    * [Параметры (датум) для Системы координат 1932 года (СК-32) #227](https://geodesist.ru/threads/parametry-datum-dlja-sistemy-koordinat-1932-goda-sk-32.83493/page-12#post-1060589) (коррекция)
+     
+
+Keep it simple, stupid.
+#13
+zvezdochiot, 28 июн 2022 в 12:56

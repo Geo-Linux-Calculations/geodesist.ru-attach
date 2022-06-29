@@ -1,0 +1,27 @@
+Таблицы MS Excel для пересчёта координат по общим точкам:
+
+    zvezdochiot сказал(а): ↑
+
+        * helmert3d.xls
+        * conformaltrans1p.xls
+        * conformaltrans2p.xls
+        * conformaltrans3p.xls
+        * conformaltrans4p.xls
+        * conformaltrans5p.xls
+        * gauss-kruger.xls
+        * DDMMSS-DD.xls
+        * geocentric.xls
+        * common_ellipsoids.xls
+        * Sheremetievka-pl13-20180131-naklon-semka.xls
+        * Sheremetievka-pl13-20180131-naklon-semka-simple.xls
+        * SM-13_1-20180510-pamyatka.pdf
+        * ols-orientir.xls
+        * tricolor-interp-pts.xls
+        Нажмите, чтобы раскрыть...
+
+    Для удобного и свободного скачивания добавил GIT: https://github.com/Geo-Linux-Calculations/geodesy-msexcel-ols
+     
+
+Keep it simple, stupid.
+#11
+zvezdochiot, 25 июн 2022 в 05:07
