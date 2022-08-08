@@ -1,0 +1,34 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 20.12.1 ] */
+/* [wxMaxima: input   start ] */
+l12:47.1803+d; l13:71.5936+d; l14:40.7192+d; l23:43.9082+d; l24:49.7608+d; l34:42.8732+d;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+p123:(l12+l13+l23)/2; p124:(l12+l14+l24)/2; p134:(l13+l14+l34)/2; p234:(l23+l24+l34)/2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+S123:sqrt(expand(p123*(p123-l12)*(p123-l13)*(p123-l23))); S124:sqrt(expand(p124*(p124-l12)*(p124-l14)*(p124-l24))); S134:sqrt(expand(p134*(p134-l13)*(p134-l14)*(p134-l34))); S234:sqrt(expand(p234*(p234-l23)*(p234-l24)*(p234-l34)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(F(d),expand(S124+S234-(S123+S134)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(t(d),taylor(F(d),d,0,3));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+find_root(t(d), d, -1, 1);
+/* [wxMaxima: input   end   ] */
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 20.12.1"$
