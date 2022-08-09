@@ -1,0 +1,23 @@
+/* 
+Решение переходной кривой для ЖД.
+
+(http://mykaralw.narod.ru/articles/spiralcirclewxmaxima/index.html)
+*/
+
+define(p(l),C/l);
+
+df_dl: 1/p(l);
+
+define(f(l),integrate(df_dl,l));
+
+k:20; dx_dl: taylor(cos(f(l)),l,0,k); dy_dl: taylor(sin(f(l)),l,0,k);
+
+define(x(l),integrate(dx_dl,l)); define(y(l),integrate(dy_dl,l));
+
+x(L); y(L);
+
+a_1: taylor((p(L)-y(L))*tan(f(L)),L,0,20); a: x(L)-a_1;
+
+z: taylor(p(L)-(p(L)-y(L))/cos(f(L)),L,0,20);
+
+C:R*L; R:600; L:50; plot2d([parametric, x(l), y(l),[l,0,L]]);

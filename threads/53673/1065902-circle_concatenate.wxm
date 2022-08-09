@@ -1,0 +1,60 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 20.12.1 ] */
+/* [wxMaxima: comment start ]
+Решение переходной кривой для ЖД.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+(http://mykaralw.narod.ru/articles/spiralcirclewxmaxima/index.html)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(p(l),C/l);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+df_dl: 1/p(l);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(f(l),integrate(df_dl,l));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+k:20; dx_dl: taylor(cos(f(l)),l,0,k); dy_dl: taylor(sin(f(l)),l,0,k);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(x(l),integrate(dx_dl,l)); define(y(l),integrate(dy_dl,l));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+x(L); y(L);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+a_1: taylor((p(L)-y(L))*tan(f(L)),L,0,20); a: x(L)-a_1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+z: taylor(p(L)-(p(L)-y(L))/cos(f(L)),L,0,20);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+C:R*L; R:600; L:50; plot2d([parametric, x(l), y(l),[l,0,L]]);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 20.12.1"$

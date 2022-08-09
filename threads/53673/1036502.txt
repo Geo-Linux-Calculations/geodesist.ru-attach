@@ -1,0 +1,11 @@
+qTrassa 0.5
+
+    nesmit сказал(а): ↑
+
+        Ссылка на проект 
+
+    [Совместимая с Qt5 версия](https://github.com/Geo-Linux-Calculations/qTrassa)
+
+
+#27
+zvezdochiot, 30 ноя 2021

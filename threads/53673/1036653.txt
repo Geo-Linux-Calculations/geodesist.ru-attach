@@ -1,0 +1,33 @@
+qTrassa 0.5
+
+
+    nesmit сказал(а): ↑
+
+        У меня вопрос по поводу переходных кривых на АД, случайно не разбирался? Разбивка оси трассы есть везде, но нигде нет как по ПК+СМ определит координату. Может где видел расчет? Все что нашел это перебор на переходке через 2-5мм.
+
+    Разбирался. ВСН160-69 до дыр. Оказалось, что ПК относится строго к разбивочной кривой. Он не пересчитывается на переходную кривую!
+    А дальше надо смотреть, что я там в [Maple](http://mykaralw.narod.ru/articles/spiralcircle/index.html) и [maxima](http://mykaralw.narod.ru/articles/spiralcirclewxmaxima/index.html) по поводу переходной кривой чудил. Давно это было!
+
+    PS: Но по факту берётся длина l = ПК - НПК, рассчитывается x(l) и y(l):
+    x(l) [IMG](http://mykaralw.narod.ru/articles/spiralcirclewxmaxima/img/spiralcircle-2010-07-15_7.png)
+    y(l) [IMG](http://mykaralw.narod.ru/articles/spiralcirclewxmaxima/img/spiralcircle-2010-07-15_8.png)
+    и пересчитываются по азимуту предшествующей прямой (только знак y(l) надо поставить в зависимости от влево-вправо):
+    [IMG](https://dxdt.ru/f/?\Delta%20X=x(l)\cdot\cos(\alpha)-y(l)\cdot\sin(\alpha))
+    [IMG](https://dxdt.ru/f/?\Delta%20Y=x(l)\cdot\sin(\alpha)+y(l)\cdot\cos(\alpha))
+    [IMG](https://dxdt.ru/f/?X=X_{ncc}+\Delta%20X)
+    [IMG](https://dxdt.ru/f/?Y=Y_{ncc}+\Delta%20Y)
+
+    текст (свернуть)
+
+
+        Формулы с помощью сервиса https://dxdt.ru/f/?test
+        Код:
+
+        dX = x(l) * cos(aпр) - y(l) * sin(aпр)
+        dY = x(l) * sin(aпр) + y(l) * cos(aпр)
+        X = Xнпк + dX
+        Y = Yнпк + dY
+
+
+#31
+zvezdochiot, 1 дек 2021 

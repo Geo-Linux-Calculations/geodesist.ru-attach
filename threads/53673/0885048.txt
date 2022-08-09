@@ -1,0 +1,11 @@
+qTrassa 0.5
+
+
+    Ссылка на проект на [GitHub](https://github.com/neos80/qTrassa).
+    Программа [тут](https://github.com/neos80/qTrassa/blob/master/setup_qTrassa.exe).
+    Пример протокола кольца [тут](https://github.com/neos80/qTrassa/blob/master/OtchetFull.pdf).
+    PS: Не стал тянуть.
+
+
+#26
+nesmit, 20 май 2019 
